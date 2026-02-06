@@ -40,6 +40,38 @@
       color: #333;
       margin-top: 15px;
     }
+    body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe4ec, #fff7fa);
+  margin: 0;
+  padding: 0;
+}
+    .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 80vh;          /* covers MacBook height nicely */
+  object-fit: cover;    /* keeps images vertical & clean */
+  border-radius: 12px;
+}
+
+/* 📱 Mobile responsive */
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid img {
+    height: 50vh;
+  }
+}
+
+
   </style>
 </head>
 
@@ -125,7 +157,14 @@
   </div>
 
 </div>
+  <div class="slider">
+  <img src="image/nail.img2.jpg" class="slide">
+  <img src="image/nail.img5.jpg" class="slide">
+    <img src="image/nail.img3.jpg" class="slide">
+</div>
+
 </body>
 </html>
+
 
 
