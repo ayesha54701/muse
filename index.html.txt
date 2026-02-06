@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ayesha's Nail Studio</title>
+</head>
+<body>
+<h1> welcome to Ayesha's nail studio</h>
+<p>my nail designs and prices coming soon.</p>
+</body>
+</html>
