@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ayesha's Nail Studio</title>
+  <meta charset="UTF-8">
+  <title>Ayesha's Nail Studio</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf7;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #4a2c2a;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #e8b4b8;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button:hover {
+      background: #d89aa0;
+    }
+
+    .section {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #333;
+      margin-top: 15px;
+    }
+  </style>
 </head>
+
 <body>
-<h1> welcome to Ayesha's nail studio</h>
-<p>my nail designs and prices coming soon.</p>
+
+  <h1>Welcome to Ayesha's Nail Studio 💅</h1>
+  <p>Select what you want and see prices instantly</p>
+
+  <!-- HOME -->
+  <div id="home">
+    <button onclick="showSection('designs')">View Nail Designs</button>
+    <button onclick="showSection('prices')">View Prices</button>
+    <button onclick="bookNow()">Book on WhatsApp</button>
+  </div>
+
+  <!-- DESIGNS -->
+  <div id="designs" class="section">
+    <h2>Nail Designs</h2>
+    <button onclick="showPrice(150)">Minimal Nail Art</button>
+    <button onclick="showPrice(250)">French Tips</button>
+    <button onclick="showPrice(400)">Chrome / Bridal</button>
+
+    <div class="price" id="designPrice"></div>
+
+    <br><br>
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+  <!-- PRICES -->
+  <div id="prices" class="section">
+    <h2>Basic Prices</h2>
+    <p>Gel Extension: ₹1200</p>
+    <p>Acrylic Extension: ₹1500</p>
+    <p>Refill: ₹800</p>
+    <p>Nail Art (per finger): ₹150+</p>
+
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("designs").style.display = "none";
+      document.getElementById("prices").style.display = "none";
+
+      document.getElementById(sectionId).style.display = "block";
+    }
+
+    function goBack() {
+      document.getElementById("designs").style.display = "none";
+      document.getElementById("prices").style.display = "none";
+      document.getElementById("home").style.display = "block";
+    }
+
+    function showPrice(amount) {
+      document.getElementById("designPrice").innerText =
+        "Price per finger: ₹" + amount;
+    }
+
+    function bookNow() {
+      window.open("https://wa.me/+91 9398822079", "_blank");
+    }
+  </script>
+
 </body>
 </html>
